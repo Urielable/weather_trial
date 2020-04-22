@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_174918) do
+ActiveRecord::Schema.define(version: 2020_04_22_174140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 2020_04_22_174918) do
   create_table "wheaters", force: :cascade do |t|
     t.integer "city_id"
     t.string "city_name"
-    t.decimal "temp", precision: 5, scale: 4
-    t.decimal "temp_max", precision: 5, scale: 4
-    t.decimal "temp_min", precision: 5, scale: 4
+    t.decimal "temp", precision: 10, scale: 4
+    t.decimal "temp_max", precision: 10, scale: 4
+    t.decimal "temp_min", precision: 10, scale: 4
+    t.string "metric"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
