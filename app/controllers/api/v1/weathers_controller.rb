@@ -2,7 +2,7 @@ class Api::V1::WeathersController < ApplicationController
   include OpenWeatherService
 
   def index
-    @weather = LoadWeatherAction.execute
+    @weather = LoadWeatherAction.execute(weather_params)
     render :index
   end
 
@@ -20,4 +20,19 @@ class Api::V1::WeathersController < ApplicationController
       render :error, status: code
     end
   end
+
+  def find
+    @weather = FindWeatherAction.execute(params)
+    
+  end
+
+  private
+   # Never trust parameters from the scary internet, only allow the white list through.
+    def weather_params
+      params.permit(
+        :attr,
+        :order,
+        :city_name
+      )
+    end
 end
