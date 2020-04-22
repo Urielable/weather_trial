@@ -22,8 +22,8 @@ class Api::V1::WeathersController < ApplicationController
   end
 
   def find
-    @weather = FindWeatherAction.execute(params)
-    
+    @weather = FindWeatherAction.execute(weather_params)
+    render :show
   end
 
   private

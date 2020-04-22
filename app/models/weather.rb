@@ -10,9 +10,11 @@ class Weather < ApplicationRecord
           :created_at)
   }
 
-  scope :custom_filter, ->(filter, order, item){
-    if item == 'created_at'
-      order(created_at: order)
+  scope :custom_filter, ->(_attr, filter){
+    if filter == 'max'
+      maximum(_attr)
+    elsif filter == 'min'
+      minimum(_attr)
     end
   }
 
@@ -20,9 +22,9 @@ class Weather < ApplicationRecord
     order(item => order)
   }
 
-  def self.all_weathers filter, order, item
+  def self.all_weathers _attr, filter
     Weather.select
-    .order(item => order)
+    .custom_filter(_attr, filter)
   end
 
   def self.custom_order _attr, order
