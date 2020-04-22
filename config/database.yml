@@ -17,8 +17,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV['INTERFACTURA_APP_DB'] || 'interfactura_app' %>
+  database: 'interfactura_app_test'
 
 production:
   <<: *default
-  database: <%= ENV['INTERFACTURA_APP_DB'] || 'interfactura_app' %>
+  database: 'interfactura_app_prod'
