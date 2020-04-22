@@ -1,6 +1,6 @@
-class CreateWheaters < ActiveRecord::Migration[6.0]
+class CreateWeathers < ActiveRecord::Migration[6.0]
   def change
-    create_table :wheaters do |t|
+    create_table :weathers do |t|
       t.integer :city_id
       t.string :city_name
       t.decimal :temp, precision: 10, scale: 4

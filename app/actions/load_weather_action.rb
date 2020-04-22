@@ -1,9 +1,9 @@
 # -*- encoding : utf-8 -*-
-class LoadWheaterAction
+class LoadWeatherAction
 
   def self.execute()
     # TODO: adds attributes for query
-    Wheater.all
+    Weather.all
   end
   
 end

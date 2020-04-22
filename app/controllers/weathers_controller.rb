@@ -1,4 +1,4 @@
-class WheatersController < ApplicationController
+class WeathersController < ApplicationController
   def index
 
   end
@@ -7,7 +7,7 @@ class WheatersController < ApplicationController
   end
 
  # Only allow a trusted parameters
-  def wheaters_get_params
+  def weathers_get_params
     params.permit(
       :city_name,
       :apikey

@@ -1,2 +1,0 @@
-class Wheater < ApplicationRecord
-end

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_174140) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "wheaters", force: :cascade do |t|
+  create_table "weathers", force: :cascade do |t|
     t.integer "city_id"
     t.string "city_name"
     t.decimal "temp", precision: 10, scale: 4
